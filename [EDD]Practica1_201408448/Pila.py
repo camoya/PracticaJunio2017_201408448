@@ -28,4 +28,4 @@ class Pila():
 		while temp!= None:
 			cadena = str(cadena) + str (temp.valor) + ' '
 			temp = temp.siguiente
-		print cadena
+		print(cadena)

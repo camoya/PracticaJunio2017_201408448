@@ -21,6 +21,26 @@ class ListaUsuario:
 			return "Agregado correctamente"
 		return "No se ha logrado insertar"
 
+	def eliminar(self, user):
+		temp = self.__inicio
+		while (temp != None):
+			if temp.get_user() == user:
+				if (self.__inicio == self.__fin):
+					self.__inicio = self.__fin = None
+					return True
+				else:
+					aux1 = temp.get_ant
+					aux2 = temp.get_sig
+					if (aux1 != None and aux2 != None):
+						aux1.set_sig(aux2)
+						aux2.set_ant(aux1)
+					return True
+			if temp == self.__inicio:
+				temp = None
+			else:
+				temp= temp.get_sig
+		return False
+
 	def buscar(self, user):
 		valido = False
 		temp = self.__inicio
@@ -42,7 +62,7 @@ class ListaUsuario:
 				temp = None
 			else:
 				temp= temp.get_sig
-		return False
+		return None
 
 	def login(self, user, passw):
 		valido = False
@@ -59,13 +79,14 @@ class ListaUsuario:
 		else:
 			print ("Usted a iniciado sesión correctamente\n")
 		return valido
+
 	def imprimirInicio(self):
 		if self.__inicio == None:
 			print ("Lista de usuarios vacia")
 		else :
 			temp = self.__inicio
 			while (temp is not None):
-				print (temp.get_user())
+				print (temp.get_user() + "==>")
 				if temp == self.__inicio:
 					temp = None
 				else:
@@ -78,7 +99,7 @@ class ListaUsuario:
 
 			temp = self.__fin	
 			while (temp is not None):
-				print (temp.get_user())
+				print (temp.get_user() + "==>")
 				if temp == self.__fin:
 					temp = None
 				else:

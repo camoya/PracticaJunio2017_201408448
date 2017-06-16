@@ -1,5 +1,7 @@
 import Matriz
+import Cola
 M = Matriz
+C = Cola
 class Usuario:
 	"""Nodo tipo usuario"""
 	def __init__(self, username, password):
@@ -11,7 +13,8 @@ class Usuario:
 		self.__trans = M.Matriz(None, None, None, None)
 		self.__TamX = 0
 		self.__TamY = 0
-		self.__Archivo=False
+		self.Archivo=False
+		self.Cola = C.Cola()
 
 	def get_user(self):
 		return self.__username

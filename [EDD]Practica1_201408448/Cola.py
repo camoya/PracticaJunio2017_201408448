@@ -1,13 +1,13 @@
-class ECola():
+class ECola(object):
 	""" Elemento o nodo de la cola"""
 	def __init__(self, valor):
-		self.valor=valor
-		self.sig=None
+		self.valor = valor
+		self.sig = None
 
-class Cola():
+class Cola(object):
 	"""Lista de EPila"""
 	def __init__(self):
-		self.__inicio= None
+		self.__inicio = None
 
 	def enqueue(self, elemento):
 		if self.__inicio == None:
@@ -33,6 +33,6 @@ class Cola():
 		temp = self.__inicio
 		cnt = 0
 		while temp!= None:
-			print("indice "+ str(cnt)+ ": "+str(temp.valor)+"\n")
+			print("\nindice "+ str(cnt)+ ": "+str(temp.valor))
 			cnt = cnt +1
 			temp = temp.sig
